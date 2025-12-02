@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #ffffff;
+            margin: 0;
+            padding: 0;
+            background-image: url("https://th.bing.com/th/id/OIP.x5OLEeTIWyaVq3Zw5o0mBAHaE7?w=277&h=184&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3");
+        }
+
+        .container {
+            width: 380px;
+            margin: 50px auto;
+            background: rgb(44, 177, 214);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #bbb;
+        }
+
+        button, .back-btn {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background: #020f67;
+            color: white;
+            border: none;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        .back-btn {
+            background: #2196F3;
+        }
+
+        .back-btn:hover {
+            background: #0b7dda;
+        }
+
+        .success-page {
+            display: none;
+            text-align: center;
+        }
+        .success-page h2 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        .success-page p {
+            margin-bottom: 30px;
+            color: #666;
+        }
+        #successPage {
+            display: none;
+        }
+    </style>
+
+    <script>
+        function goToNextPage() {
+            document.getElementById("formPage").style.display = "none";
+            document.getElementById("successPage").style.display = "block";
+        }
+
+        function goBack() {
+            document.getElementById("successPage").style.display = "none";
+            document.getElementById("formPage").style.display = "block";
+        }
+    </script>
+
+</head>
+<body>
+
+  
+    <div class="container" id="formPage">
+        <h2>Job Application Form</h2>
+
+        <form onsubmit="goToNextPage(); return false;">
+
+            <label>Full Name</label>
+            <input type="text" required>
+
+            <label>Email</label>
+            <input type="email" required>
+
+            <label>Phone Number</label>
+            <input type="text" required>
+
+              
+          
+            <label>Position Applying For</label>
+            <select required>
+               
+                <option>Software Engineer</option>
+                <option>Web Developer</option>
+                <option>Data Analyst</option>
+                <option>UI/UX Designer</option>
+            </select>
+
+            <label>Date of Birth</label>
+            <input type="date">
+
+            <div class="full">
+          <label>Gender:</label>
+          <div class="row">
+            <label style="flex:1"><input type="radio" name="auth" value="citizen" /> Male</label>
+            <label style="flex:1"><input type="radio" name="auth" value="work_permit" /> Female</label>
+           
+        </div><br>
+        <audio controls>
+            <source src="c:\Users\harih\Downloads\sample-12s.mp3" type="audio/mp3">
+        </audio>
+           
+          
+          
+            
+            <label>Upload Resume</label>
+            <input type="file" required>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+
+    
+   
+
+</form> <div class="container" id="successPage">
+        <h2>Application Submitted!</h2>
+        <p>Thank you for applying. You will be contacted soon.</p>
+
+        <a class="back-btn" onclick="goBack()">Go Back</a>
+    </div>
+
+     <div class="container success-page" id="successPage">
+        <h2>Application Submitted Successfully!</h2>
+        <p>Thank you for your application. We have received your submission and will review it shortly. You will be contacted if selected for the next steps.</p>
+        <button class="back-btn" onclick="goBack()">Apply for Another Position</button>
+    </div>
+
+    <script>
+        function showSuccessPage() {
+            document.getElementById('formPage').style.display = 'none';
+            document.getElementById('successPage').style.display = 'block';
+        }
+
+        function goBack() {
+            document.getElementById('successPage').style.display = 'none';
+            document.getElementById('formPage').style.display = 'block';
+            document.getElementById('applicationForm').reset();
+        }
+    </script>
+</body>
+</html>
